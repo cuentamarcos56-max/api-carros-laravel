@@ -14,6 +14,8 @@ WORKDIR /app
 COPY . .
 
 RUN composer install
+RUN cp .env.example .env
+RUN php artisan key:generate
 
 RUN touch database/database.sqlite
 
